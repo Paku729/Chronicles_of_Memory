@@ -39,7 +39,7 @@ This is not just an app. It's an **ecosystem** that allows writers to create sto
 
 
 
-📖 Хроники Памяти (Chronicles of Memory)
+# 📖 Хроники Памяти (Chronicles of Memory)
 
 **Платформа для создания, публикации и чтения интерактивных визуальных новелл.**
 

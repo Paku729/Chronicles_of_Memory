@@ -14,8 +14,12 @@ public class UIManager : MonoBehaviour
     [Header("Startup Screen")]
     [SerializeField] private string startScreenId = "home";
 
+    // Ğååñòğ ïîëíîıêğàííûõ ıêğàíîâ
     private Dictionary<string, GameObject> screenRegistry = new Dictionary<string, GameObject>();
     private Stack<GameObject> screenStack = new Stack<GameObject>();
+
+    //  ÍÎÂÎÅ: Ğååñòğ îâåğëååâ
+    private Dictionary<string, GameObject> overlayRegistry = new Dictionary<string, GameObject>();
 
     public GameObject CurrentScreen { get; private set; }
     public event Action<string> OnScreenChanged;
@@ -37,6 +41,11 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"UIManager: çàğåãèñòğèğîâàíî {screenRegistry.Count} ıêğàíîâ.");
+        foreach (var kvp in screenRegistry)
+        {
+            Debug.Log($"  - {kvp.Key}: {kvp.Value.name}");
+        }
         StartCoroutine(ShowStartScreenAfterRegistration());
     }
 
@@ -54,6 +63,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // ============================================
+    // ĞÅÃÈÑÒĞÀÖÈß İÊĞÀÍÎÂ (ïîëíîıêğàííûå)
+    // ============================================
+
     public void RegisterScreen(string id, GameObject screen)
     {
         if (!screenRegistry.ContainsKey(id))
@@ -66,6 +79,10 @@ public class UIManager : MonoBehaviour
             Debug.LogWarning($"Screen '{id}' already registered!");
         }
     }
+
+    // ============================================
+    // ÏÎÊÀÇ İÊĞÀÍÀ (ïîëíîıêğàííûé)
+    // ============================================
 
     public void ShowScreen(string id, bool addToStack = true)
     {
@@ -117,6 +134,60 @@ public class UIManager : MonoBehaviour
         isTransitioning = false;
     }
 
+    // ============================================
+    //  ÍÎÂÎÅ: ĞÅÃÈÑÒĞÀÖÈß ÎÂÅĞËÅÅÂ
+    // ============================================
+
+    public void RegisterOverlay(string id, GameObject overlay)
+    {
+        if (!overlayRegistry.ContainsKey(id))
+        {
+            overlayRegistry.Add(id, overlay);
+            overlay.SetActive(false);
+            Debug.Log($"Overlay '{id}' registered.");
+        }
+        else
+        {
+            Debug.LogWarning($"Overlay '{id}' already registered!");
+        }
+    }
+
+    // ============================================
+    //  ÍÎÂÎÅ: ÏÎÊÀÇÀÒÜ ÎÂÅĞËÅÉ
+    // ============================================
+
+    public void ShowOverlay(string id)
+    {
+        if (!overlayRegistry.TryGetValue(id, out var overlay))
+        {
+            Debug.LogError($"Overlay '{id}' not registered!");
+            return;
+        }
+
+        overlay.SetActive(true);
+        Debug.Log($"Overlay '{id}' shown.");
+    }
+
+    // ============================================
+    //  ÍÎÂÎÅ: ÑÊĞÛÒÜ ÎÂÅĞËÅÉ
+    // ============================================
+
+    public void HideOverlay(string id)
+    {
+        if (!overlayRegistry.TryGetValue(id, out var overlay))
+        {
+            Debug.LogError($"Overlay '{id}' not registered!");
+            return;
+        }
+
+        overlay.SetActive(false);
+        Debug.Log($"Overlay '{id}' hidden.");
+    }
+
+    // ============================================
+    // ÀÍÈÌÀÖÈÈ
+    // ============================================
+
     private IEnumerator FadeIn(GameObject screen)
     {
         var canvasGroup = screen.GetComponent<CanvasGroup>();
@@ -161,6 +232,10 @@ public class UIManager : MonoBehaviour
         canvasGroup.alpha = 0f;
         screen.SetActive(false);
     }
+
+    // ============================================
+    // ÂÑÏÎÌÎÃÀÒÅËÜÍÛÅ
+    // ============================================
 
     public void GoBack()
     {

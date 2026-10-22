@@ -13,12 +13,13 @@ This is not just an app. It's an **ecosystem** that allows writers to create sto
 ### 📦 1. Story Package — Standard Novel Archive
 - A single `.zip` format containing everything: script, sprites, backgrounds, music, Live2D (for future versions).
 - **Versioning:** package updates don't break older versions.
-- **Structure:** `story.json`, `metadata.json`, `/backgrounds`, `/characters`, `/music`, `/localized`.
+- **Structure:** `story.json`, `manifest.json`, `/backgrounds`, `/characters`, `/cg`, `/music`, `/sounds`, `/localized`.
 
 ### ⚙️ 2. Story Importer — Twine → JSON Converter
-- Parses HTML export from Twine.
-- Generates `story.json` with dialogues, choices, and transitions.
-- Automatic script validation (checks scene references).
+- Parses HTML export from Twine (Harlowe).
+- Understands the writers' dialect: "red marks" — `Фон:` / `Музыка:` / `SFX:` / `Спрайт:` / `CG:`, stat changes (`[+6 Name]`), `[[choices]]`.
+- Generates `story.json` with dialogues, choices, and transitions (passages addressed **by name**, never by pid).
+- Validates the script: broken passage links, missing assets, dead-end passages, character name case mismatches.
 
 ### 📖 3. Story Runtime — Playback Engine
 - Loads and unpacks `StoryPackage`.
@@ -55,12 +56,13 @@ This is not just an app. It's an **ecosystem** that allows writers to create sto
 ### 📦 1. Story Package — стандарт архива новеллы
 - Единый формат `.zip`, содержащий всё: сценарий, спрайты, фоны, музыку, Live2D (для будущих версий).
 - **Версионность:** обновление пакета не ломает старые версии.
-- **Структура:** `story.json`, `metadata.json`, папки `/backgrounds`, `/characters`, `/music`, `/localized`.
+- **Структура:** `story.json`, `manifest.json`, папки `/backgrounds`, `/characters`, `/cg`, `/music`, `/sounds`, `/localized`.
 
 ### ⚙️ 2. Story Importer — конвертер Twine → JSON
-- Парсит HTML-экспорт из Twine.
-- Генерирует `story.json` с диалогами, выборами и переходами.
-- Автоматическая валидация сценария (проверка ссылок на сцены).
+- Парсит HTML-экспорт из Twine (Harlowe).
+- Понимает авторский диалект: «красные пометки» — `Фон:` / `Музыка:` / `SFX:` / `Спрайт:` / `CG:`, приросты отношений (`[+6 Имя]`), `[[выборы]]`.
+- Генерирует `story.json` с диалогами, выборами и переходами (пассажи адресуются **по имени**, никогда по pid).
+- Валидация сценария: битые ссылки на пассажи, отсутствующие ассеты, тупиковые пассажи, расхождения регистра имён персонажей.
 
 ### 📖 3. Story Runtime — движок воспроизведения
 - Загружает и распаковывает `StoryPackage`.

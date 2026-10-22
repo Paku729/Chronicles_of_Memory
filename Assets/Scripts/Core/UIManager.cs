@@ -14,11 +14,11 @@ public class UIManager : MonoBehaviour
     [Header("Startup Screen")]
     [SerializeField] private string startScreenId = "home";
 
-    // Ğååñòğ ïîëíîıêğàííûõ ıêğàíîâ
+    // Ğ ĞµĞµÑÑ‚Ñ€ Ğ¿Ğ¾Ğ»Ğ½Ğ¾ÑĞºÑ€Ğ°Ğ½Ğ½Ñ‹Ñ… ÑĞºÑ€Ğ°Ğ½Ğ¾Ğ²
     private Dictionary<string, GameObject> screenRegistry = new Dictionary<string, GameObject>();
     private Stack<GameObject> screenStack = new Stack<GameObject>();
 
-    //  ÍÎÂÎÅ: Ğååñòğ îâåğëååâ
+    //  ĞĞĞ’ĞĞ•: Ğ ĞµĞµÑÑ‚Ñ€ Ğ¾Ğ²ĞµÑ€Ğ»ĞµĞµĞ²
     private Dictionary<string, GameObject> overlayRegistry = new Dictionary<string, GameObject>();
 
     public GameObject CurrentScreen { get; private set; }
@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"UIManager: çàğåãèñòğèğîâàíî {screenRegistry.Count} ıêğàíîâ.");
+        Debug.Log($"UIManager: Ğ·Ğ°Ñ€ĞµĞ³Ğ¸ÑÑ‚Ñ€Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¾ {screenRegistry.Count} ÑĞºÑ€Ğ°Ğ½Ğ¾Ğ².");
         foreach (var kvp in screenRegistry)
         {
             Debug.Log($"  - {kvp.Key}: {kvp.Value.name}");
@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    // ĞÅÃÈÑÒĞÀÖÈß İÊĞÀÍÎÂ (ïîëíîıêğàííûå)
+    // Ğ Ğ•Ğ“Ğ˜Ğ¡Ğ¢Ğ ĞĞ¦Ğ˜Ğ¯ Ğ­ĞšĞ ĞĞĞĞ’ (Ğ¿Ğ¾Ğ»Ğ½Ğ¾ÑĞºÑ€Ğ°Ğ½Ğ½Ñ‹Ğµ)
     // ============================================
 
     public void RegisterScreen(string id, GameObject screen)
@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    // ÏÎÊÀÇ İÊĞÀÍÀ (ïîëíîıêğàííûé)
+    // ĞŸĞĞšĞĞ— Ğ­ĞšĞ ĞĞĞ (Ğ¿Ğ¾Ğ»Ğ½Ğ¾ÑĞºÑ€Ğ°Ğ½Ğ½Ñ‹Ğ¹)
     // ============================================
 
     public void ShowScreen(string id, bool addToStack = true)
@@ -135,7 +135,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    //  ÍÎÂÎÅ: ĞÅÃÈÑÒĞÀÖÈß ÎÂÅĞËÅÅÂ
+    //  ĞĞĞ’ĞĞ•: Ğ Ğ•Ğ“Ğ˜Ğ¡Ğ¢Ğ ĞĞ¦Ğ˜Ğ¯ ĞĞ’Ğ•Ğ Ğ›Ğ•Ğ•Ğ’
     // ============================================
 
     public void RegisterOverlay(string id, GameObject overlay)
@@ -153,7 +153,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    //  ÍÎÂÎÅ: ÏÎÊÀÇÀÒÜ ÎÂÅĞËÅÉ
+    //  ĞĞĞ’ĞĞ•: ĞŸĞĞšĞĞ—ĞĞ¢Ğ¬ ĞĞ’Ğ•Ğ Ğ›Ğ•Ğ™
     // ============================================
 
     public void ShowOverlay(string id)
@@ -169,7 +169,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    //  ÍÎÂÎÅ: ÑÊĞÛÒÜ ÎÂÅĞËÅÉ
+    //  ĞĞĞ’ĞĞ•: Ğ¡ĞšĞ Ğ«Ğ¢Ğ¬ ĞĞ’Ğ•Ğ Ğ›Ğ•Ğ™
     // ============================================
 
     public void HideOverlay(string id)
@@ -185,7 +185,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    // ÀÍÈÌÀÖÈÈ
+    // ĞĞĞ˜ĞœĞĞ¦Ğ˜Ğ˜
     // ============================================
 
     private IEnumerator FadeIn(GameObject screen)
@@ -234,7 +234,7 @@ public class UIManager : MonoBehaviour
     }
 
     // ============================================
-    // ÂÑÏÎÌÎÃÀÒÅËÜÍÛÅ
+    // Ğ’Ğ¡ĞŸĞĞœĞĞ“ĞĞ¢Ğ•Ğ›Ğ¬ĞĞ«Ğ•
     // ============================================
 
     public void GoBack()

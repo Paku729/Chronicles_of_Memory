@@ -19,7 +19,7 @@ public class StoryCard : MonoBehaviour
         {
             if (currentStory == null)
             {
-                Debug.LogError("StoryCard: currentStory = null! Не вызывался SetData?");
+                Debug.LogError("StoryCard: currentStory = null! РќРµ РІС‹Р·С‹РІР°Р»СЃСЏ SetData?");
                 return;
             }
             OnCardClicked?.Invoke(currentStory);
@@ -30,21 +30,21 @@ public class StoryCard : MonoBehaviour
     {
         if (story == null)
         {
-            Debug.LogError("StoryCard: SetData получил null!");
+            Debug.LogError("StoryCard: SetData РїРѕР»СѓС‡РёР» null!");
             return;
         }
 
         currentStory = story;
 
-        // Название
+        // РќР°Р·РІР°РЅРёРµ
         if (titleLabel != null)
             titleLabel.text = story.title;
 
-        // Тег "Скоро"
+        // РўРµРі "РЎРєРѕСЂРѕ"
         if (soonTag != null)
             soonTag.SetActive(!story.isActive);
 
-        // Цвет фона
+        // Р¦РІРµС‚ С„РѕРЅР°
         if (coverImage != null)
         {
             switch (story.coverColor)

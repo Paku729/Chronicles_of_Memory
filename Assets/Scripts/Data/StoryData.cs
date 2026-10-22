@@ -12,5 +12,5 @@ public class StoryData
     public int season;
     public int currentEpisode;
     public int totalEpisodes;
-    public bool isActive; // true — доступно, false — "Скоро"
+    public bool isActive; // true вЂ” РґРѕСЃС‚СѓРїРЅРѕ, false вЂ” "РЎРєРѕСЂРѕ"
 }

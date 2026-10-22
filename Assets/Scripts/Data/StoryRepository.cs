@@ -9,10 +9,10 @@ public static class StoryRepository
             new StoryData
             {
                 id = "1",
-                title = "Полынная невеста",
-                description = "Свадьба по расчёту связывает её с чужаком из северных земель...",
+                title = "РџРѕР»С‹РЅРЅР°СЏ РЅРµРІРµСЃС‚Р°",
+                description = "РЎРІР°РґСЊР±Р° РїРѕ СЂР°СЃС‡С‘С‚Сѓ СЃРІСЏР·С‹РІР°РµС‚ РµС‘ СЃ С‡СѓР¶Р°РєРѕРј РёР· СЃРµРІРµСЂРЅС‹С… Р·РµРјРµР»СЊ...",
                 coverColor = "cover-1",
-                genres = new List<string> { "Романтика", "Драма" },
+                genres = new List<string> { "Р РѕРјР°РЅС‚РёРєР°", "Р”СЂР°РјР°" },
                 season = 1,
                 currentEpisode = 4,
                 totalEpisodes = 10,
@@ -21,10 +21,10 @@ public static class StoryRepository
             new StoryData
             {
                 id = "2",
-                title = "Дом на грани тумана",
-                description = "Старый особняк хранит память о тех, кто не смог его покинуть...",
+                title = "Р”РѕРј РЅР° РіСЂР°РЅРё С‚СѓРјР°РЅР°",
+                description = "РЎС‚Р°СЂС‹Р№ РѕСЃРѕР±РЅСЏРє С…СЂР°РЅРёС‚ РїР°РјСЏС‚СЊ Рѕ С‚РµС…, РєС‚Рѕ РЅРµ СЃРјРѕРі РµРіРѕ РїРѕРєРёРЅСѓС‚СЊ...",
                 coverColor = "cover-2",
-                genres = new List<string> { "Мистика", "Романтика" },
+                genres = new List<string> { "РњРёСЃС‚РёРєР°", "Р РѕРјР°РЅС‚РёРєР°" },
                 season = 1,
                 currentEpisode = 1,
                 totalEpisodes = 8,
@@ -33,10 +33,10 @@ public static class StoryRepository
             new StoryData
             {
                 id = "3",
-                title = "Соль и сталь",
-                description = "На границе двух королевств встречаются капитан наёмников и...",
+                title = "РЎРѕР»СЊ Рё СЃС‚Р°Р»СЊ",
+                description = "РќР° РіСЂР°РЅРёС†Рµ РґРІСѓС… РєРѕСЂРѕР»РµРІСЃС‚РІ РІСЃС‚СЂРµС‡Р°СЋС‚СЃСЏ РєР°РїРёС‚Р°РЅ РЅР°С‘РјРЅРёРєРѕРІ Рё...",
                 coverColor = "cover-3",
-                genres = new List<string> { "Экшн", "Романтика" },
+                genres = new List<string> { "Р­РєС€РЅ", "Р РѕРјР°РЅС‚РёРєР°" },
                 season = 2,
                 currentEpisode = 2,
                 totalEpisodes = 12,

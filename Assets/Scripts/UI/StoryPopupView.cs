@@ -18,7 +18,7 @@ public class StoryPopupView : MonoBehaviour
 
     void Start()
     {
-        // Подписываемся на кнопки
+        // РџРѕРґРїРёСЃС‹РІР°РµРјСЃСЏ РЅР° РєРЅРѕРїРєРё
         if (closeButton != null)
             closeButton.onClick.AddListener(Close);
 
@@ -40,7 +40,7 @@ public class StoryPopupView : MonoBehaviour
             genreText.text = string.Join(", ", story.genres);
 
         if (seasonText != null)
-            seasonText.text = $"Сезон {story.season}";
+            seasonText.text = $"РЎРµР·РѕРЅ {story.season}";
     }
 
     private void Close()
@@ -52,13 +52,13 @@ public class StoryPopupView : MonoBehaviour
     {
         if (currentStory == null)
         {
-            Debug.LogWarning("StoryPopup: нет данных для запуска!");
+            Debug.LogWarning("StoryPopup: РЅРµС‚ РґР°РЅРЅС‹С… РґР»СЏ Р·Р°РїСѓСЃРєР°!");
             return;
         }
 
-        Debug.Log($"Запуск новеллы: {currentStory.title}");
+        Debug.Log($"Р—Р°РїСѓСЃРє РЅРѕРІРµР»Р»С‹: {currentStory.title}");
         Close();
 
-        // TODO: открыть экран чтения
+        // TODO: РѕС‚РєСЂС‹С‚СЊ СЌРєСЂР°РЅ С‡С‚РµРЅРёСЏ
     }
 }

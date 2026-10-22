@@ -9,7 +9,7 @@ public class ScreenBase : MonoBehaviour
         if (string.IsNullOrEmpty(screenId))
             screenId = gameObject.name;
 
-        // Регистрируем экран в UIManager
+        // Р РµРіРёСЃС‚СЂРёСЂСѓРµРј СЌРєСЂР°РЅ РІ UIManager
         if (UIManager.Instance != null)
         {
             UIManager.Instance.RegisterScreen(screenId, gameObject);

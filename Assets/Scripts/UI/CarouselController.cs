@@ -20,7 +20,7 @@ public class CarouselController : MonoBehaviour
 
             if (card == null)
             {
-                Debug.LogError($"На объекте {cardGO.name} нет компонента StoryCard!");
+                Debug.LogError($"РќР° РѕР±СЉРµРєС‚Рµ {cardGO.name} РЅРµС‚ РєРѕРјРїРѕРЅРµРЅС‚Р° StoryCard!");
                 continue;
             }
 
@@ -31,15 +31,15 @@ public class CarouselController : MonoBehaviour
 
     private void OnStoryCardClicked(StoryData story)
     {
-        Debug.Log($"Выбрана новелла: {story.title}");
+        Debug.Log($"Р’С‹Р±СЂР°РЅР° РЅРѕРІРµР»Р»Р°: {story.title}");
 
-        // Передаём данные в попап
+        // РџРµСЂРµРґР°С‘Рј РґР°РЅРЅС‹Рµ РІ РїРѕРїР°Рї
         if (popupView != null)
         {
             popupView.SetData(story);
         }
 
-        // Открываем оверлей через UIManager
+        // РћС‚РєСЂС‹РІР°РµРј РѕРІРµСЂР»РµР№ С‡РµСЂРµР· UIManager
         UIManager.Instance.ShowOverlay("storyPopup");
     }
 }

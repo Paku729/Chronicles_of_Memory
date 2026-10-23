@@ -22,6 +22,12 @@ public class UIManager : MonoBehaviour
     private Dictionary<string, GameObject> overlayRegistry = new Dictionary<string, GameObject>();
 
     public GameObject CurrentScreen { get; private set; }
+
+    /// <summary>
+    /// Id текущего экрана (для NavButton и стартового состояния нав. бара).
+    /// </summary>
+    public string CurrentScreenId => GetScreenId(CurrentScreen);
+
     public event Action<string> OnScreenChanged;
 
     private bool isTransitioning = false;

@@ -82,4 +82,6 @@ opencode.jsonc
 *.unitymcp
 AGENTS.md
 _figma-import/
+# Скрины-сверки из MCP-сессий, в репо не хранятся
+/Captures/
 

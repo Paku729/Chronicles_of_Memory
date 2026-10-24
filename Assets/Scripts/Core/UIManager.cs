@@ -129,14 +129,16 @@ public class UIManager : MonoBehaviour
     {
         isTransitioning = true;
 
+        // Вариант А: событие уходит сразу в начале перехода (до фейда) —
+        // нав-бар зажигает вкладку мгновенно по клику, экраны кроссфейдятся отдельно.
+        OnScreenChanged?.Invoke(GetScreenId(newScreen));
+
         if (oldScreen != null)
             yield return StartCoroutine(FadeOut(oldScreen));
 
         yield return StartCoroutine(FadeIn(newScreen));
 
         CurrentScreen = newScreen;
-        OnScreenChanged?.Invoke(GetScreenId(newScreen));
-
         isTransitioning = false;
     }
 
